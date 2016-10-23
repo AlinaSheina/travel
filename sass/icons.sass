@@ -1,0 +1,25 @@
+.item-icon
+	position: relative
+	&:before
+		content: ""
+		height: $icon-height
+		width: $icon-height
+		position: relative
+		left: 0
+		top: 6px
+		background-image: url(../img/icon-sprite.png)
+		background-repeat: no-repeat
+		display: inline-block
+		padding-right: 6px
+.overview-icon:before
+	background-position: 0 0
+.details-icon:before
+	background-position: 0 0 - $icon-height
+.family-icon:before
+	background-position: 0 0 - $icon-height*2
+.foodie-icon:before
+	background-position: 0 0 - $icon-height*3
+.shopping-icon:before
+	background-position: 0 0 - $icon-height*4
+.pet-icon:before
+	background-position: 0 0 - $icon-height*5

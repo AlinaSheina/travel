@@ -1,0 +1,30 @@
+.degrees-block
+	display: table
+	margin-top: 12px
+	width: 100%
+	.degree-item
+		display: table-row
+		.degree-item-cell
+			display: table-cell
+			height: 40px
+			vertical-align: middle
+			&:last-of-type
+				text-align: right
+		.degree
+			border: $degree-border
+			padding: 1px
+			height: 10px
+			width: 220px
+			border-radius: $border-radius-base
+			margin: 0 2px
+			box-sizing: border-box
+			.degree-value
+				background: $degree-value-bg
+				height: 100%
+				border-radius: $border-radius-base/2  0 0 $border-radius-base/2
+			.degree-value-buget
+				width: 40%
+			.degree-value-relaxed
+				width: 55%
+			.degree-value-desolate
+				width: 17%

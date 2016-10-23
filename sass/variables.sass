@@ -1,0 +1,110 @@
+$brown-light: #c8b485
+$brown: #453c25
+$green: #b9e005
+$green-light: #dfdcb0
+$yellow: #ffdf06
+$yellow-dark: #dfc40a
+$white: #fff
+$bordo: #3d2723
+$grey-light: #0a0a0a
+$biege: #f5f4e2
+$biege-active: rgba(250,250,242,0.2)
+$biege-light: #e4e3d2
+$color-brown: #3d380a
+$color-grey-dark: #272723
+$red: #ec4b36
+
+@mixin centering-item
+	display: flex
+	justify-content: center
+	align-items: center
+@mixin gradient-horiz($left-color, $right-color)
+	background: $left-color
+	background: linear-gradient(to right, $left-color, $right-color)
+@mixin decor-line-shadow($height)
+	height: $height
+	width: 100%
+	position: absolute
+	content: ""
+	background: rgba(0,0,0,0.07)
+	display: block
+	border-radius: 100%
+	bottom: -$height/2
+	clip: rect($height/2, auto, $height, 0)
+
+$font-family-base: 'Open Sans', sans-serif
+$font-size-base: 14px
+$border-radius-base: 4px
+$border-radius-big: 8px
+$text-color-main: $color-brown
+$text-color-second: $color-grey-dark
+
+$font-size-11: 0.785714285714286em
+$font-size-14: 1em
+$font-size-16: 1.142857142857143em
+$font-size-18: 1.285714285714286em
+$font-size-20: 1.428571428571429em
+$font-size-40: 2.857142857142857em
+$font-size-50: 3.571428571428571em
+
+$header-height: 60px
+$header-menu-border: 1px solid rgba(68,59,37,0.1)
+$header-menu-font-size: $font-size-18
+$header-menu-color: $brown
+$header-menu-active-bg: $biege-active
+
+$social-icons-font-size: $font-size-40
+$social-icons-color: $brown
+
+$icon-height: 24px
+$icon-width: $icon-height
+
+$letter-spasing05: 0.05em
+$letter-spasing09: 0.09em
+
+$link-font-size: $font-size-11
+$link-color: $color-brown
+
+$itinerary-text-color: $white
+$itinerary-text-font-size: $font-size-16
+
+$expert-characters-width: 380px
+$avatar-width: 80px
+$avatar-shedow: 0 0 3px $grey-light
+
+$degree-border: 1px solid $green-light
+$degree-value-bg: $green
+
+$expert-overview-color: $color-grey-dark
+$expert-overview-title-color: $bordo
+
+$trips-block-bg: $biege
+$trips-block-border: 1px solid $biege-light
+$trips-day-heading-height: 48px
+$trips-day-heading-line-height: $trips-day-heading-height
+$decor-line-border: 2px dashed rgba(80,76,41,0.1)
+
+$img-block-shadow: 0 2px 0 rgba(0,0,0,0.2)
+$img-block-bg: $white
+$img-block-decor-line-height: 26px
+$img-block-decor-line-line-height: $img-block-decor-line-height
+$img-block-decor-line-color: $red
+
+$btn-font-size: $font-size-16
+$btn-main-bg: $yellow
+$btn-main-shadow: 0 2px 0 $yellow-dark
+$btn-color: $brown
+
+$font-size-h1: $font-size-50
+$title-main-font-size: $font-size-20
+$title-sub-font-size: $font-size-14
+
+$arrow-height: 30px
+$arrow-width: $arrow-height
+$arrow-border: 2px solid $yellow
+$arrow-bg: #fff
+
+$footer-bg: $brown
+$footer-color: $white
+
+$social-icons-block-color: $white

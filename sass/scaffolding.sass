@@ -1,0 +1,57 @@
+html,
+body 
+	min-height: 100%
+	height: 1px
+body
+	font-family: $font-family-base
+	color: $text-color-main
+	font-size: $font-size-base
+	display: flex
+	flex-direction: column
+.wrapper
+	flex: 1
+header 
+	background: $brown-light
+	height: $header-height
+	padding-right: 20px
+	.menu-icon-block
+		float: left
+		height: $header-height
+		width: 70px
+		border-right: $header-menu-border
+		@include centering-item
+		.menu-icon
+			height: 30px
+			width: 30px
+			background-image: url(../img/menu-icon.png)
+			&:hover
+				background-position: 0 30px
+	menu 
+		float: left
+		font-size: $header-menu-font-size
+		.menu-item
+			float: left
+			border-right: $header-menu-border
+			a
+				color: $header-menu-color
+				text-decoration: none
+				padding: 0 24px
+				line-height: $header-height
+			&.active
+				font-weight: bold
+				background: $header-menu-active-bg
+main
+	padding-bottom: 80px
+footer
+	min-height: 100px
+	background: $footer-bg
+	color: $footer-color
+	padding: 0 140px
+	display: flex
+	align-items: center
+	a
+		color: $social-icons-block-color
+	.social-icons-block
+		a
+			color: $social-icons-block-color
+	

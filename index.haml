@@ -1,0 +1,196 @@
+- @social_icons = ['facebook-square', 'twitter-square'];
+- @menu_items = {:Home => 'home', :Itineraries => 'itineraries ', :About => 'about'}
+!!! 5
+%html(lang='en')
+	%head
+		%meta{:charset => "UTF-8"}
+		%title Overview
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/main.css"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/font-awesome.min.css"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"}
+		%script{:type => "text/javascript", :src => "js/jquery-3.1.1.min.js"}
+		%script{:type => "text/javascript", :src => "js/interface.js"}
+	%body
+		.wrapper
+			%header
+				%a{:href => "javascript:void(0);", :class => "menu-icon-block"}
+					%span.menu-icon
+				%menu
+					%ul
+						%li.menu-item.active
+							%a{:href => "javascript:void(0);", :class => "overview-icon item-icon"} Overview
+						%li.menu-item
+							%a{:href => "javascript:void(0);", :class => "details-icon item-icon"} Details
+				.social-icons-block
+					%span Share this itinerary:
+					- @social_icons.each do |item|
+						%a{:href => "javascript:void(0);"}
+							%i{:class => "fa fa-#{item}"}
+			%main
+				.itinerary-block-bg
+					.itinerary-block.wrap-width
+						.itinerary-text
+							%p ITINERARY
+							%h1 Trip to Fabulous Las Vegas
+							.itinerary-tags
+								%span.itinerary-duration 2 DAYS
+								%ul
+									%li.itinerary-tags-item
+										%span.item-icon.family-icon family
+									%li.itinerary-tags-item
+										%span.item-icon.foodie-icon foodie
+									%li.itinerary-tags-item
+										%span.item-icon.shopping-icon shopping
+									%li.itinerary-tags-item
+										%span.item-icon.pet-icon pat frienly
+				.content.wrap-width
+					.expert-block.clearfix
+						.expert-characters
+							.clearfix
+								%img.avatar{:src => "img/avatar.png"}
+								.expert-characters-text
+									%p.title-sub  Local Expert
+									%p Audrey Tautou
+							.degrees-block
+								.degree-item
+									.degree-item-cell Buget
+									.degree-item-cell
+										.degree
+											.degree-value.degree-value-buget
+									.degree-item-cell Luxury
+								.degree-item
+									.degree-item-cell Relaxed
+									.degree-item-cell
+										.degree
+											.degree-value.degree-value-relaxed
+									.degree-item-cell Active
+								.degree-item
+									.degree-item-cell Desolate
+									.degree-item-cell
+										.degree
+											.degree-value.degree-value-desolate
+									.degree-item-cell Crowdy
+						.expert-overview
+							%p.title-sub Overview
+							%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. 
+							%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus... ut, vehicula eu diam. 
+							%p Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+					.trips-block
+						.trip-day
+							.decor-line-bg.js-open-btn
+								.trip-day-heading.decor-line
+									%span.title-main Day 1
+									.arrow-down.arrow-up
+							.trip-day-content.clearfix.js-open-content
+								.left-side
+									.img-block
+										%img{:src => "img/map.png"}
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img1.png"}
+										.img-block-text
+											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+								.time-line
+									%img{:src => "img/timeline.png"}
+								.right-side
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img2.png"}
+										.img-block-text
+											%p Lorem ipsum dolor sit amet, consectetur
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img3.png"}
+										.img-block-text
+											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+						.trip-day
+							.decor-line-bg.js-open-btn
+								.trip-day-heading.decor-line
+									%span.title-main Day 2
+									.arrow-down
+							.trip-day-content.clearfix.js-open-content.jshide
+								.left-side
+									.img-block
+										%img{:src => "img/map.png"}
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img1.png"}
+										.img-block-text
+											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+								.time-line
+									%img{:src => "img/timeline.png"}
+								.right-side
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img2.png"}
+										.img-block-text
+											%p Lorem ipsum dolor sit amet, consectetur
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img3.png"}
+										.img-block-text
+											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+						.trip-day
+							.decor-line-bg.js-open-btn
+								.trip-day-heading.decor-line
+									%span.title-main Day 3
+									.arrow-down
+							.trip-day-content.clearfix.js-open-content.jshide
+								.left-side
+									.img-block
+										%img{:src => "img/map.png"}
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img1.png"}
+										.img-block-text
+											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+								.time-line
+									%img{:src => "img/timeline.png"}
+								.right-side
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img2.png"}
+										.img-block-text
+											%p Lorem ipsum dolor sit amet, consectetur
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+									.img-block
+										.clearfix
+											%img{:src => "img/trip-img3.png"}
+										.img-block-text
+											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
+										.img-block-decor-line.decor-line-bg
+											.decor-line Show on the map
+					.love-it-block.clearfix
+						%img.itinerary-logo{:src => "img/itinerary-logo.png"}
+						%p.title-main Love this itinerary?
+						%p.love-it-text.center-horizontal Use it to create a new contest and local experts will get a better sense of the trip you want
+						.love-it-btn-block
+							%a{:href => "javascript:void(0);", :class => "btn-style btn-main float-left"} Create A New contest
+							%a{:href => "javascript:void(0);"} Learn more
+		%footer
+			%ul.footer-menu
+				- @menu_items.each do |key, value|
+					%li
+						%a{:href => "#{value}"}= key
+			.social-icons-block
+				- @social_icons.each do |item|
+					%a{:href => "javascript:void(0);"}
+						%i{:class => "fa fa-#{item}"}
+
+
+

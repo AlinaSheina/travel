@@ -1,0 +1,132 @@
+.wrap-width 
+	max-width: 940px
+	margin-left: auto
+	margin-right: auto
+	padding: 0 10px
+.itinerary-block-bg
+	background: url(../img/top-banner.png)
+	.itinerary-block	
+		height: 420px
+		position: relative
+.itinerary-text
+	position: absolute
+	bottom: 14px
+	left: 10px
+	color: $itinerary-text-color
+	h1
+		margin-top: 12px
+	p,
+	.itinerary-tags		
+		font-size: $itinerary-text-font-size
+	.itinerary-tags
+		letter-spacing: $letter-spasing09
+		display: flex
+		align-items: center
+		line-height: 34px
+		margin-top: 12px
+		.itinerary-duration
+			padding-right: 24px
+		.itinerary-tags-item
+			float: left
+			padding: 0 14px 0 18px
+			line-height: $icon-height
+			border-right: 1px solid $itinerary-text-color
+			&:last-of-type
+				border-right: none
+			.item-icon:before
+				float: left
+				top: 0
+.expert-block
+	margin-top: 40px
+.expert-characters
+	width: $expert-characters-width
+	max-width: 100%
+	padding-right: 36px
+	box-sizing: border-box
+	float: left
+	.avatar
+		float: left
+		width: $avatar-width
+		margin-right: 20px
+		border-radius: $border-radius-base
+		box-shadow: $avatar-shedow
+	.expert-characters-text
+		float: left
+		width: calc(100% - (80px + 20px) )
+		.title-sub
+			margin-top: 4px
+			margin-bottom: 12px
+.expert-overview
+	width: calc(100% - 380px)
+	float: right
+	color: $expert-overview-color
+	line-height: 1.4em
+	.title-sub
+		color: $expert-overview-title-color
+		margin-bottom: 24px
+.trips-block
+	background: $trips-block-bg
+	padding: 22px 0 36px
+	border-radius: $border-radius-big
+	border: $trips-block-border
+	margin: 36px 0 40px
+	.decor-line-bg
+		margin-bottom: -10px
+	.trip-day-heading
+		height: $trips-day-heading-height
+		line-height: $trips-day-heading-line-height
+		cursor: pointer
+		position: relative
+	.trip-day-content
+		padding: 50px 60px 0
+		.left-side,
+		.right-side
+			float: left
+			width: calc( (100% - 138px) / 2 )
+		.time-line
+			float: left
+			width: 138px
+			text-align: center
+			padding-top: 130px
+		.right-side
+			float: right
+		.img-block
+			box-shadow: $img-block-shadow
+			border-radius: $border-radius-big
+			overflow: hidden
+			margin-bottom: 32px
+			background: $img-block-bg		
+			img
+				float: left
+			.img-block-text
+				padding: 20px
+				line-height: 1.2em
+			.img-block-decor-line
+				margin-bottom: 15px
+				text-align: left
+				color: $img-block-decor-line-color
+				letter-spacing: $letter-spasing05
+				&:before
+					@include decor-line-shadow(8px)
+				.decor-line
+					height: $img-block-decor-line-height
+					line-height: $img-block-decor-line-line-height
+					padding: 0 20px
+.love-it-block
+	text-align: center
+	.itinerary-logo
+		margin-bottom: 18px
+	.title-main
+		margin-bottom: 24px
+	.love-it-text
+		margin-bottom: 32px
+		max-width: 310px
+	.love-it-btn-block
+		@include centering-item
+		margin-bottom: 24px
+		.btn-style
+			margin-right: 24px
+
+
+
+
