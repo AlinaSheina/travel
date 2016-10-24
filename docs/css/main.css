@@ -96,6 +96,8 @@ header {
       header menu .menu-item.active {
         font-weight: bold;
         background: rgba(250, 250, 242, 0.2); }
+      header menu .menu-item:hover {
+        background: rgba(250, 250, 242, 0.2); }
 
 main {
   padding-bottom: 80px; }
@@ -106,11 +108,34 @@ footer {
   color: #fff;
   padding: 0 140px;
   display: flex;
-  align-items: center; }
-  footer a {
-    color: #fff; }
+  justify-content: space-between;
+  align-items: center;
+  position: relative; }
+  footer .footer-menu li {
+    float: left;
+    margin-right: 18px; }
+    footer .footer-menu li a {
+      color: #fff;
+      text-decoration: none;
+      text-transform: none; }
+      footer .footer-menu li a:hover {
+        color: #ffdf06; }
+  footer .footer-copy-img {
+    position: absolute;
+    background: url(../img/footer-copy.png);
+    background-repeat: no-repeat;
+    width: 57px;
+    height: 27px;
+    left: 50%;
+    top: 50%;
+    margin-left: -29px;
+    margin-top: -14px; }
+    footer .footer-copy-img:hover {
+      background-position: 0 -27px; }
   footer .social-icons-block a {
     color: #fff; }
+    footer .social-icons-block a:hover {
+      color: #ffdf06; }
 
 .wrap-width {
   max-width: 940px;
@@ -180,6 +205,8 @@ footer {
   float: right;
   color: #272723;
   line-height: 1.4em; }
+  .expert-overview .full-text-block {
+    height: 218px; }
   .expert-overview .title-sub {
     color: #3d2723;
     margin-bottom: 24px; }
@@ -224,7 +251,6 @@ footer {
       .trips-block .trip-day-content .img-block .img-block-decor-line {
         margin-bottom: 15px;
         text-align: left;
-        color: #ec4b36;
         letter-spacing: 0.05em; }
         .trips-block .trip-day-content .img-block .img-block-decor-line:before {
           height: 8px;
@@ -240,6 +266,24 @@ footer {
           height: 26px;
           line-height: 26px;
           padding: 0 20px; }
+          .trips-block .trip-day-content .img-block .img-block-decor-line .decor-line:hover {
+            color: #3d380a; }
+        .trips-block .trip-day-content .img-block .img-block-decor-line .show-icon {
+          padding-left: 28px;
+          position: relative;
+          color: #ec4b36;
+          text-transform: none;
+          text-decoration: none;
+          display: block; }
+          .trips-block .trip-day-content .img-block .img-block-decor-line .show-icon:before {
+            content: "";
+            position: absolute;
+            width: 10px;
+            height: 15px;
+            background: url(../img/show-on-the-map.png);
+            background-repeat: no-repeat;
+            top: 5px;
+            left: 14px; }
 
 .love-it-block {
   text-align: center; }
@@ -272,7 +316,12 @@ footer {
 
 .btn-main {
   background: #ffdf06;
-  box-shadow: 0 2px 0 #dfc40a; }
+  box-shadow: 0 -2px 0 #dfc40a inset; }
+  .btn-main:hover {
+    background: #ffe534; }
+  .btn-main:focus {
+    background: #ffe534;
+    box-shadow: 0 2px 0 #dfc40a inset; }
 
 .degrees-block {
   display: table;
@@ -315,6 +364,8 @@ a {
   font-size: 0.78571em;
   color: #3d380a;
   letter-spacing: 0.05em; }
+  a:hover {
+    text-decoration: none; }
 
 .jshide {
   display: none; }
@@ -383,8 +434,31 @@ a {
   box-sizing: border-box;
   background-image: url(../img/arrow-sprite.png);
   background-repeat: no-repeat; }
+  .arrow-down:hover {
+    border: 2px solid #b9e005; }
   .arrow-down.arrow-up {
     background-position: 0 -26px; }
+
+.full-text-block {
+  overflow: hidden; }
+
+.full-text-btn {
+  display: block;
+  text-align: center;
+  font-size: 1.42857em;
+  text-decoration: none; }
+  .full-text-btn:hover {
+    color: #ec4b36; }
+
+.fa.angle-up {
+  display: none; }
+
+.full-height {
+  height: auto !important; }
+  .full-height + .full-text-btn .fa.angle-down {
+    display: none; }
+  .full-height + .full-text-btn .fa.angle-up {
+    display: block; }
 
 .item-icon {
   position: relative; }
