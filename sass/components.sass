@@ -7,6 +7,8 @@ a
 	font-size: $link-font-size
 	color: $link-color
 	letter-spacing: $letter-spasing05
+	&:hover
+		text-decoration: none
 .jshide
 	display: none
 .center-horizontal
@@ -58,6 +60,25 @@ a
 	box-sizing: border-box 
 	background-image: url(../img/arrow-sprite.png)
 	background-repeat: no-repeat
+	&:hover
+		border: $arrow-border-hover
 	&.arrow-up
 		background-position: 0 -26px
-
+.full-text-block
+	overflow: hidden
+.full-text-btn
+	display: block
+	text-align: center
+	font-size: $full-text-font-size
+	text-decoration: none
+	&:hover
+		color: $full-text-color-hover
+.fa.angle-up
+	display: none
+.full-height
+	height: auto !important
+	& + .full-text-btn 
+		.fa.angle-down
+			display: none
+		.fa.angle-up
+			display: block

@@ -1,0 +1,32 @@
+- @social_icons = ['facebook-square', 'twitter-square'];
+- @menu_items = {:Home => 'home', :Itineraries => 'itineraries ', :About => 'about'}
+!!! 5
+%html(lang='en')
+	%head
+		%meta{:charset => "UTF-8"}
+		%title Overview
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/main.css"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/font-awesome.min.css"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"}
+		%script{:type => "text/javascript", :src => "js/jquery-3.1.1.min.js"}
+		%script{:type => "text/javascript", :src => "js/interface.js"}
+	%body
+		.wrapper
+			%header
+				%a{:href => "javascript:void(0);", :class => "menu-icon-block"}
+					%span.menu-icon
+				%menu
+					%ul
+						%li.menu-item
+							%a{:href => "javascript:void(0);", :class => "overview-icon item-icon"} Overview
+						%li.menu-item.active
+							%a{:href => "javascript:void(0);", :class => "details-icon item-icon"} Details
+				.social-icons-block
+					%span Share this itinerary:
+					- @social_icons.each do |item|
+						%a{:href => "javascript:void(0);"}
+							%i{:class => "fa fa-#{item}"}
+			%main
+				%aside.sidebar
+					
+				%iframe{:src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21163.394441734978!2d35.0057674!3d48.4675744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2e1bc92c35d%3A0xda9a5f920805c2ff!2sSite+In+Top!5e0!3m2!1sru!2sua!4v1477315160620", :width => "600", :height => "450", :frameborder => "0", :style => "border:0", :allowfullscreen => "allowfullscreen"}

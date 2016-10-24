@@ -71,10 +71,14 @@
 											.degree-value.degree-value-desolate
 									.degree-item-cell Crowdy
 						.expert-overview
-							%p.title-sub Overview
-							%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. 
-							%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus... ut, vehicula eu diam. 
-							%p Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+							.full-text-block
+								%p.title-sub Overview
+								%p Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla quam velit, vulputate eu pharetra nec, mattis ac neque. Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit, et lacinia ipsum quam nec dui. 
+								%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna. Aenean velit odio, elementum in tempus... ut, vehicula eu diam. 
+								%p Pellentesque rhoncus aliquam mattis. Ut vulputate eros sed felis sodales nec vulputate justo hendrerit. Vivamus varius pretium ligula, a aliquam odio euismod sit amet. Quisque laoreet sem sit amet orci ullamcorper at ultricies metus viverra. Pellentesque arcu mauris, malesuada quis ornare accumsan, blandit sed diam.
+							%a{:href => "javascript:void(0);", :class => "full-text-btn"}
+								%i.fa.fa-angle-down.angle-down
+								%i.fa.fa-angle-up.angle-up
 					.trips-block
 						.trip-day
 							.decor-line-bg.js-open-btn
@@ -91,7 +95,7 @@
 										.img-block-text
 											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 								.time-line
 									%img{:src => "img/timeline.png"}
 								.right-side
@@ -101,14 +105,14 @@
 										.img-block-text
 											%p Lorem ipsum dolor sit amet, consectetur
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 									.img-block
 										.clearfix
 											%img{:src => "img/trip-img3.png"}
 										.img-block-text
 											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 						.trip-day
 							.decor-line-bg.js-open-btn
 								.trip-day-heading.decor-line
@@ -124,7 +128,7 @@
 										.img-block-text
 											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 								.time-line
 									%img{:src => "img/timeline.png"}
 								.right-side
@@ -134,14 +138,14 @@
 										.img-block-text
 											%p Lorem ipsum dolor sit amet, consectetur
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 									.img-block
 										.clearfix
 											%img{:src => "img/trip-img3.png"}
 										.img-block-text
 											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 						.trip-day
 							.decor-line-bg.js-open-btn
 								.trip-day-heading.decor-line
@@ -157,7 +161,7 @@
 										.img-block-text
 											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 								.time-line
 									%img{:src => "img/timeline.png"}
 								.right-side
@@ -167,14 +171,14 @@
 										.img-block-text
 											%p Lorem ipsum dolor sit amet, consectetur
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 									.img-block
 										.clearfix
 											%img{:src => "img/trip-img3.png"}
 										.img-block-text
 											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
 										.img-block-decor-line.decor-line-bg
-											.decor-line Show on the map
+											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 					.love-it-block.clearfix
 						%img.itinerary-logo{:src => "img/itinerary-logo.png"}
 						%p.title-main Love this itinerary?
@@ -187,6 +191,7 @@
 				- @menu_items.each do |key, value|
 					%li
 						%a{:href => "#{value}"}= key
+			%a{:href => "javascript:void(0);", :class => "footer-copy-img"}
 			.social-icons-block
 				- @social_icons.each do |item|
 					%a{:href => "javascript:void(0);"}

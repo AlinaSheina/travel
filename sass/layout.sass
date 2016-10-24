@@ -61,6 +61,8 @@
 	float: right
 	color: $expert-overview-color
 	line-height: 1.4em
+	.full-text-block
+		height: 218px
 	.title-sub
 		color: $expert-overview-title-color
 		margin-bottom: 24px
@@ -104,7 +106,6 @@
 			.img-block-decor-line
 				margin-bottom: 15px
 				text-align: left
-				color: $img-block-decor-line-color
 				letter-spacing: $letter-spasing05
 				&:before
 					@include decor-line-shadow(8px)
@@ -112,6 +113,24 @@
 					height: $img-block-decor-line-height
 					line-height: $img-block-decor-line-line-height
 					padding: 0 20px
+					&:hover
+						color: $text-color-main
+				.show-icon
+					padding-left: 28px
+					position: relative
+					color: $img-block-decor-line-color
+					text-transform: none
+					text-decoration: none
+					display: block
+					&:before
+						content: ""
+						position: absolute
+						width: 10px
+						height: 15px
+						background: url(../img/show-on-the-map.png)
+						background-repeat: no-repeat
+						top: 5px
+						left: 14px
 .love-it-block
 	text-align: center
 	.itinerary-logo

@@ -40,6 +40,8 @@ header
 			&.active
 				font-weight: bold
 				background: $header-menu-active-bg
+			&:hover
+				background: $header-menu-active-bg
 main
 	padding-bottom: 80px
 footer
@@ -48,10 +50,34 @@ footer
 	color: $footer-color
 	padding: 0 140px
 	display: flex
+	justify-content: space-between
 	align-items: center
-	a
-		color: $social-icons-block-color
+	position: relative
+	.footer-menu
+		li
+			float: left
+			margin-right: 18px
+			a
+				color: $social-icons-block-color
+				text-decoration: none
+				text-transform: none
+				&:hover
+					color: $yellow
+	.footer-copy-img
+		position: absolute
+		background: url(../img/footer-copy.png)
+		background-repeat: no-repeat
+		width: 57px
+		height: 27px
+		left: 50%
+		top: 50%
+		margin-left: -29px
+		margin-top: - 14px
+		&:hover
+			background-position: 0 -27px
 	.social-icons-block
 		a
 			color: $social-icons-block-color
+			&:hover
+				color: $yellow
 	
