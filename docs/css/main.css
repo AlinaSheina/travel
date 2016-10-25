@@ -225,18 +225,40 @@ footer {
     cursor: pointer;
     position: relative; }
   .trips-block .trip-day-content {
-    padding: 50px 60px 0; }
+    padding: 50px 60px 0;
+    display: flex; }
     .trips-block .trip-day-content .left-side,
     .trips-block .trip-day-content .right-side {
-      float: left;
       width: calc( (100% - 138px) / 2 ); }
+    .trips-block .trip-day-content .left-side .img-block-time:after {
+      right: -68px;
+      background-position: 0 -30px;
+      bottom: 120px; }
+    .trips-block .trip-day-content .left-side .img-block-time:first-of-type:after {
+      background: none; }
     .trips-block .trip-day-content .time-line {
-      float: left;
       width: 138px;
       text-align: center;
-      padding-top: 130px; }
-    .trips-block .trip-day-content .right-side {
-      float: right; }
+      margin: 141px 0 131px;
+      background: url(../img/timeline-line.png);
+      background-repeat: repeat-y;
+      background-position: 50% 0; }
+    .trips-block .trip-day-content .right-side .img-block-time:after {
+      left: -68px;
+      background-position: 0 -10px;
+      bottom: 80px; }
+    .trips-block .trip-day-content .right-side .img-block-time:first-of-type:after {
+      background-position: 0 0px;
+      top: 130px; }
+    .trips-block .trip-day-content .img-block-time {
+      position: relative; }
+      .trips-block .trip-day-content .img-block-time:after {
+        content: "";
+        height: 10px;
+        width: 34px;
+        background: url(../img/timeline-sprite.png);
+        position: absolute;
+        display: block; }
     .trips-block .trip-day-content .img-block {
       box-shadow: 0 2px 0 rgba(0, 0, 0, 0.2);
       border-radius: 8px;
@@ -347,12 +369,6 @@ footer {
         background: #b9e005;
         height: 100%;
         border-radius: 2px 0 0 2px; }
-      .degrees-block .degree-item .degree .degree-value-buget {
-        width: 40%; }
-      .degrees-block .degree-item .degree .degree-value-relaxed {
-        width: 55%; }
-      .degrees-block .degree-item .degree .degree-value-desolate {
-        width: 17%; }
 
 h1 {
   font-size: 3.57143em;
@@ -368,7 +384,7 @@ a {
     text-decoration: none; }
 
 .jshide {
-  display: none; }
+  display: none !important; }
 
 .center-horizontal {
   margin-left: auto;
