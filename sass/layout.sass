@@ -81,17 +81,41 @@
 		position: relative
 	.trip-day-content
 		padding: 50px 60px 0
+		display: flex
 		.left-side,
 		.right-side
-			float: left
 			width: calc( (100% - 138px) / 2 )
+		.left-side
+			.img-block-time:after
+				right: -68px
+				background-position: 0 -30px
+				bottom: 120px
+			.img-block-time:first-of-type:after
+				background: none
 		.time-line
-			float: left
 			width: 138px
 			text-align: center
-			padding-top: 130px
+			margin: 141px 0 131px
+			background: url(../img/timeline-line.png)
+			background-repeat: repeat-y
+			background-position: 50% 0
 		.right-side
-			float: right
+			.img-block-time:after
+				left: -68px
+				background-position: 0 -10px
+				bottom: 80px
+			.img-block-time:first-of-type:after
+				background-position: 0 0px
+				top: 130px
+		.img-block-time
+			position: relative
+			&:after
+				content: ""
+				height: 10px
+				width: 34px
+				background: url(../img/timeline-sprite.png)
+				position: absolute
+				display: block				
 		.img-block
 			box-shadow: $img-block-shadow
 			border-radius: $border-radius-big

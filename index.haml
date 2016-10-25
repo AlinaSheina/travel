@@ -1,5 +1,55 @@
 - @social_icons = ['facebook-square', 'twitter-square'];
-- @menu_items = {:Home => 'home', :Itineraries => 'itineraries ', :About => 'about'}
+- @menu_items = [{ :Home => 'home', 
+					:Itineraries => 'itineraries ',
+					:About => 'about'}]
+- @degree_items = [{:degree_item => [{:left_value => 'Buget',
+									:degree_value => '47%',
+									:right_value => 'Luxury'}] },
+					{:degree_item => [{:left_value => 'Relaxed',
+									:degree_value => '32%',
+									:right_value => 'Active'}] },
+					{:degree_item => [{:left_value => 'Desolate',
+									:degree_value => '67%',
+									:right_value => 'Crowdy'}] }]
+- @travel_plan = [{ :title => 'Day 1',
+					:tours => [{:img => 'img/map.png',
+								:point_on_the_map => nil,
+								:description => nil },
+								{:img => 'img/trip-img2.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								{:img => 'img/trip-img1.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								{:img => 'img/trip-img3.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]},
+					{:title => 'Day 2',
+					:tours => [{:img => 'img/map.png',
+								:point_on_the_map => nil,
+								:description => nil },
+								{:img => 'img/trip-img2.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								{:img => 'img/trip-img1.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								{:img => 'img/trip-img3.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]},
+					{:title => 'Day 3',
+					:tours => [{:img => 'img/map.png',
+								:point_on_the_map => nil,
+								:description => nil },
+								{:img => 'img/trip-img2.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								{:img => 'img/trip-img1.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								{:img => 'img/trip-img3.png',
+								:point_on_the_map => 'javascript:void(0)',
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]} ]
 !!! 5
 %html(lang='en')
 	%head
@@ -52,24 +102,14 @@
 									%p.title-sub  Local Expert
 									%p Audrey Tautou
 							.degrees-block
-								.degree-item
-									.degree-item-cell Buget
-									.degree-item-cell
-										.degree
-											.degree-value.degree-value-buget
-									.degree-item-cell Luxury
-								.degree-item
-									.degree-item-cell Relaxed
-									.degree-item-cell
-										.degree
-											.degree-value.degree-value-relaxed
-									.degree-item-cell Active
-								.degree-item
-									.degree-item-cell Desolate
-									.degree-item-cell
-										.degree
-											.degree-value.degree-value-desolate
-									.degree-item-cell Crowdy
+								-@degree_items.each do |item|
+									.degree-item
+										- item[:degree_item].each do |value|
+											.degree-item-cell= value[:left_value]
+											.degree-item-cell
+												.degree
+													.degree-value{:style => "width: #{value[:degree_value]}"}
+											.degree-item-cell= value[:right_value]
 						.expert-overview
 							.full-text-block
 								%p.title-sub Overview
@@ -80,112 +120,40 @@
 								%i.fa.fa-angle-down.angle-down
 								%i.fa.fa-angle-up.angle-up
 					.trips-block
-						.trip-day
-							.decor-line-bg.js-open-btn
-								.trip-day-heading.decor-line
-									%span.title-main Day 1
-									.arrow-down.arrow-up
-							.trip-day-content.clearfix.js-open-content
-								.left-side
-									.img-block
-										%img{:src => "img/map.png"}
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img1.png"}
-										.img-block-text
-											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-								.time-line
-									%img{:src => "img/timeline.png"}
-								.right-side
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img2.png"}
-										.img-block-text
-											%p Lorem ipsum dolor sit amet, consectetur
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img3.png"}
-										.img-block-text
-											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-						.trip-day
-							.decor-line-bg.js-open-btn
-								.trip-day-heading.decor-line
-									%span.title-main Day 2
-									.arrow-down
-							.trip-day-content.clearfix.js-open-content.jshide
-								.left-side
-									.img-block
-										%img{:src => "img/map.png"}
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img1.png"}
-										.img-block-text
-											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-								.time-line
-									%img{:src => "img/timeline.png"}
-								.right-side
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img2.png"}
-										.img-block-text
-											%p Lorem ipsum dolor sit amet, consectetur
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img3.png"}
-										.img-block-text
-											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-						.trip-day
-							.decor-line-bg.js-open-btn
-								.trip-day-heading.decor-line
-									%span.title-main Day 3
-									.arrow-down
-							.trip-day-content.clearfix.js-open-content.jshide
-								.left-side
-									.img-block
-										%img{:src => "img/map.png"}
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img1.png"}
-										.img-block-text
-											%p Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-								.time-line
-									%img{:src => "img/timeline.png"}
-								.right-side
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img2.png"}
-										.img-block-text
-											%p Lorem ipsum dolor sit amet, consectetur
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-									.img-block
-										.clearfix
-											%img{:src => "img/trip-img3.png"}
-										.img-block-text
-											%p Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.
-										.img-block-decor-line.decor-line-bg
-											%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
-					.love-it-block.clearfix
-						%img.itinerary-logo{:src => "img/itinerary-logo.png"}
-						%p.title-main Love this itinerary?
-						%p.love-it-text.center-horizontal Use it to create a new contest and local experts will get a better sense of the trip you want
-						.love-it-btn-block
-							%a{:href => "javascript:void(0);", :class => "btn-style btn-main float-left"} Create A New contest
-							%a{:href => "javascript:void(0);"} Learn more
+						-@travel_plan.each_with_index do |item, index|
+							.trip-day
+								.decor-line-bg.js-open-btn
+									.trip-day-heading.decor-line
+										%span.title-main= item[:title]
+										.arrow-down{:class => "#{index == 0 ? 'arrow-up' : ''}"}
+								.trip-day-content.clearfix.js-open-content{:class => "#{index != 0 ? 'jshide' : ''}"}
+									.left-side
+										- item[:tours].each_with_index do |tour, index|
+											- if index % 2 == 0
+												.img-block-time	
+													.img-block
+														.clearfix
+															%img{:src => "#{tour[:img]}"}
+														-if tour[:description]
+															.img-block-text
+																%p= tour[:description]
+														-if tour[:point_on_the_map]
+															.img-block-decor-line.decor-line-bg
+																%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
+									.time-line
+									.right-side
+										- item[:tours].each_with_index do |tour, index|
+											- unless index % 2 == 0
+												.img-block-time
+													.img-block
+														.clearfix
+															%img{:src => "#{tour[:img]}"}
+														-if tour[:description]
+															.img-block-text
+																%p= tour[:description]
+														-if tour[:point_on_the_map]
+															.img-block-decor-line.decor-line-bg
+																%a{:href => "javascript:void(0);", :class => "decor-line show-icon"} Show on the map
 		%footer
 			%ul.footer-menu
 				- @menu_items.each do |key, value|
