@@ -110,7 +110,7 @@ main {
   box-sizing: border-box;
   position: absolute;
   top: 0;
-  height: calc(100vh - 60px);
+  height: calc(100vh - 64px);
   transition: 0.3s ease-in-out; }
   .sidebar.sidebar-hide {
     transform: translateX(-100%);
@@ -153,6 +153,21 @@ main {
           font-size: 1.42857em;
           letter-spacing: 0.03em;
           padding-bottom: 4px; }
+      .sidebar .info-block .info-block-header .info-header-time {
+        position: relative;
+        padding-left: 20px; }
+        .sidebar .info-block .info-block-header .info-header-time:before {
+          content: "";
+          height: 20px;
+          width: 20px;
+          background: url(../img/steps-sprite.png);
+          background-position: 0 -140px;
+          display: block;
+          position: absolute;
+          top: 0;
+          left: 0; }
+        .sidebar .info-block .info-block-header .info-header-time .time-value {
+          padding-top: 4px; }
     .sidebar .info-block .info-block-img {
       width: 100%; }
     .sidebar .info-block .info-block-description {
@@ -200,6 +215,10 @@ footer {
   margin-left: auto;
   margin-right: auto;
   padding: 0 10px; }
+
+.center {
+  margin-left: auto;
+  margin-right: auto; }
 
 .itinerary-block-bg {
   background: url(../img/top-banner.png); }
@@ -399,7 +418,7 @@ footer {
 
 .iframe-map-style {
   width: 100%;
-  height: calc(100vh - 60px); }
+  height: calc(100vh - 64px); }
 
 .btn-style {
   display: table;
@@ -616,6 +635,36 @@ a {
     background-position: 0 -20px; }
   .steps-sprite.steps-pets {
     background-position: 0 0px; }
+
+.calendar {
+  position: relative; }
+  .calendar > .fa {
+    position: absolute;
+    font-size: 1.42857em;
+    top: 8px;
+    cursor: pointer; }
+    .calendar > .fa.fa-angle-left {
+      left: 30px; }
+    .calendar > .fa.fa-angle-right {
+      right: 30px; }
+  .calendar .calendar-viewport {
+    width: 360px;
+    overflow: hidden;
+    height: 30px;
+    border: 1px solid #ffdf06;
+    border-radius: 4px;
+    margin-bottom: 30px; }
+    .calendar .calendar-viewport .calendar-overview .calendar-item {
+      width: 120px;
+      height: 100%;
+      line-height: 30px;
+      border-right: 1px solid #ffdf06;
+      text-align: center;
+      float: left;
+      cursor: pointer; }
+      .calendar .calendar-viewport .calendar-overview .calendar-item.active-item {
+        background: #ffdf06;
+        cursor: pointer; }
 
 .item-icon {
   position: relative; }
