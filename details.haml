@@ -1,5 +1,6 @@
 - @social_icons = ['facebook-square', 'twitter-square'];
 - @menu_items = {:Home => 'home', :Itineraries => 'itineraries ', :About => 'about'}
+- @calendar_deys = ['Jun 24', 'Jun 25', 'Jun 26', 'Jun 27']
 - @info_block = [{:info => [{:icon => 'food',
 							:info_text => 'Trattoria Da Ropeton',
 							:info_hint => 'Via Fontana del Ferro, 1, Verona, Italy',
@@ -30,7 +31,7 @@
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/font-awesome.min.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/jquery.custom-scrollbar.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"}
-		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Indie+Flower"}
 		%script{:type => "text/javascript", :src => "js/jquery-3.1.1.min.js"}
 		%script{:type => "text/javascript", :src => "js/interface.js"}
 		%script{:type => "text/javascript", :src => "js/jquery.custom-scrollbar.js"}
@@ -56,6 +57,13 @@
 						%i.fa.fa-angle-left
 					.custom-scrollbar
 						.sidebar-padding
+							.calendar
+								%i.fa.fa-angle-left.js-left
+								%i.fa.fa-angle-right.js-right
+								.calendar-viewport.center
+									.calendar-overview
+										- @calendar_deys.each_with_index do |item, index|
+											.calendar-item{:class => "#{index == 0 ? 'active-item' : ''}"}= item
 							-@info_block.each do |item|
 								.info-block
 									- item[:info].each do |value|
@@ -64,7 +72,8 @@
 											.info-header-text
 												%p= value[:info_text]
 												%span.text-hint= value[:info_hint]
-											.info-header-time= value[:time]
+											.info-header-time
+												.time-value= value[:time]
 										-if value[:info_img]
 											%img.info-block-img{:src => "#{value[:info_img]}"}
 										-if value[:description]
