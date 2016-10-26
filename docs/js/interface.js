@@ -9,4 +9,9 @@ $(function(){
 		var thisClosest = $(this).closest('.expert-overview');
 		thisClosest.find('.full-text-block').toggleClass('full-height');
 	});
+
+	$('.sidebar-arrow').click(function() {
+		var sidebar = $(this).closest('.sidebar');
+		sidebar.toggleClass('sidebar-hide');
+	});
 });
