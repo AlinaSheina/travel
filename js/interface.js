@@ -5,8 +5,13 @@ $(function(){
 		thisParent.find('.arrow-down').toggleClass('arrow-up');
 	});
 
-	$('.full-text').click(function() {
+	$('.full-text-btn').click(function() {
 		var thisClosest = $(this).closest('.expert-overview');
-		thisClosest.toggleClass('full-height');
+		thisClosest.find('.full-text-block').toggleClass('full-height');
+	});
+
+	$('.sidebar-arrow').click(function() {
+		var sidebar = $(this).closest('.sidebar');
+		sidebar.toggleClass('sidebar-hide');
 	});
 });

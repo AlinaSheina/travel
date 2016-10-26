@@ -19,7 +19,7 @@
 	.itinerary-tags		
 		font-size: $itinerary-text-font-size
 	.itinerary-tags
-		letter-spacing: $letter-spasing09
+		letter-spacing: $letter-spacing09
 		display: flex
 		align-items: center
 		line-height: 34px
@@ -82,10 +82,19 @@
 	.trip-day-content
 		padding: 50px 60px 0
 		display: flex
+		.block-time
+			position: absolute
+			font-family: 'Indie Flower', cursive
+			color: #a29948
+			font-size: $font-size-18
+			letter-spacing: $letter-spacing03
 		.left-side,
 		.right-side
 			width: calc( (100% - 138px) / 2 )
 		.left-side
+			.block-time
+				bottom: 130px
+				right: -54px
 			.img-block-time:after
 				right: -68px
 				background-position: 0 -30px
@@ -100,13 +109,20 @@
 			background-repeat: repeat-y
 			background-position: 50% 0
 		.right-side
+			.block-time
+				bottom: 59px
+				left: -54px
 			.img-block-time:after
 				left: -68px
 				background-position: 0 -10px
 				bottom: 80px
-			.img-block-time:first-of-type:after
-				background-position: 0 0px
-				top: 130px
+			.img-block-time:first-of-type
+				.block-time
+					top: 114px
+					left: -54px
+				&:after
+					background-position: 0 0px
+					top: 130px
 		.img-block-time
 			position: relative
 			&:after
@@ -130,7 +146,7 @@
 			.img-block-decor-line
 				margin-bottom: 15px
 				text-align: left
-				letter-spacing: $letter-spasing05
+				letter-spacing: $letter-spacing05
 				&:before
 					@include decor-line-shadow(8px)
 				.decor-line
@@ -169,6 +185,10 @@
 		margin-bottom: 24px
 		.btn-style
 			margin-right: 24px
+
+.iframe-map-style
+	width: 100%
+	height: calc(100vh - 60px)
 
 
 

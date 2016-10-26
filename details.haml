@@ -1,15 +1,39 @@
 - @social_icons = ['facebook-square', 'twitter-square'];
 - @menu_items = {:Home => 'home', :Itineraries => 'itineraries ', :About => 'about'}
+- @info_block = [{:info => [{:icon => 'food',
+							:info_text => 'Trattoria Da Ropeton',
+							:info_hint => 'Via Fontana del Ferro, 1, Verona, Italy',
+							:time => '10:00',
+							:info_img => 'img/step-img1.png',
+							:description => "Amazing owner who sings and serves the food himself! Experience which you'll never forget and will include to the travel different mockups :)" }],
+				:step => 'car' },
+				{:info => [{:icon => 'shop',
+							:info_text => 'Trattoria Da Ropeton',
+							:info_hint => 'Via Fontana del Ferro, 1, Verona, Italy',
+							:time => '12:00',
+							:info_img => nil,
+							:description => nil }],
+				:step => 'bus' },
+				{:info => [{:icon => 'shop',
+							:info_text => 'Trattoria Da Ropeton',
+							:info_hint => 'Via Fontana del Ferro, 1, Verona, Italy',
+							:time => '15:00',
+							:info_img => nil,
+							:description => nil }],
+				:step => nil }]
 !!! 5
 %html(lang='en')
 	%head
 		%meta{:charset => "UTF-8"}
-		%title Overview
+		%title Details
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/main.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/font-awesome.min.css"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "css/jquery.custom-scrollbar.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet"}
 		%script{:type => "text/javascript", :src => "js/jquery-3.1.1.min.js"}
 		%script{:type => "text/javascript", :src => "js/interface.js"}
+		%script{:type => "text/javascript", :src => "js/jquery.custom-scrollbar.js"}
 	%body
 		.wrapper
 			%header
@@ -28,5 +52,27 @@
 							%i{:class => "fa fa-#{item}"}
 			%main
 				%aside.sidebar
-					
-				%iframe{:src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21163.394441734978!2d35.0057674!3d48.4675744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2e1bc92c35d%3A0xda9a5f920805c2ff!2sSite+In+Top!5e0!3m2!1sru!2sua!4v1477315160620", :width => "600", :height => "450", :frameborder => "0", :style => "border:0", :allowfullscreen => "allowfullscreen"}
+					%a.sidebar-arrow{:href => "javascript:void(0);"}
+						%i.fa.fa-angle-left
+					.custom-scrollbar
+						.sidebar-padding
+							-@info_block.each do |item|
+								.info-block
+									- item[:info].each do |value|
+										.info-block-header
+											.info-header-icon{:class => "steps-sprite steps-#{value[:icon]}"}
+											.info-header-text
+												%p= value[:info_text]
+												%span.text-hint= value[:info_hint]
+											.info-header-time= value[:time]
+										-if value[:info_img]
+											%img.info-block-img{:src => "#{value[:info_img]}"}
+										-if value[:description]
+											.info-block-description= value[:description]
+								-if item[:step]
+									.step-circle{:class => "#{item[:step]}"}
+				%iframe{:class => "iframe-map-style", :src => "https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d21163.394441734978!2d35.0057674!3d48.4675744!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x40dbe2e1bc92c35d%3A0xda9a5f920805c2ff!2sSite+In+Top!5e0!3m2!1sru!2sua!4v1477315160620", :frameborder => "0", :style => "border:0", :allowfullscreen => "allowfullscreen"}
+	:javascript
+		$(document).ready(function() {
+			$(".custom-scrollbar").customScrollbar();
+		});

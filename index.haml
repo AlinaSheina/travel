@@ -1,7 +1,6 @@
-- @social_icons = ['facebook-square', 'twitter-square'];
-- @menu_items = [{ :Home => 'home', 
-					:Itineraries => 'itineraries ',
-					:About => 'about'}]
+- @social_icons = ['facebook-square', 'twitter-square']
+- @rating = 3
+- @menu_items = {:Home => 'home', :Itineraries => 'itineraries', :About => 'about'}
 - @degree_items = [{:degree_item => [{:left_value => 'Buget',
 									:degree_value => '47%',
 									:right_value => 'Luxury'}] },
@@ -10,46 +9,58 @@
 									:right_value => 'Active'}] },
 					{:degree_item => [{:left_value => 'Desolate',
 									:degree_value => '67%',
-									:right_value => 'Crowdy'}] }]
+									:right_value => 'Crowdy'}] }];
 - @travel_plan = [{ :title => 'Day 1',
 					:tours => [{:img => 'img/map.png',
 								:point_on_the_map => nil,
-								:description => nil },
+								:description => nil,
+								:time => nil },
 								{:img => 'img/trip-img2.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								:description => 'Lorem ipsum dolor sit amet, consectetur',
+								:time => '10:00'},
 								{:img => 'img/trip-img1.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit',
+								:time => '15:00'},
 								{:img => 'img/trip-img3.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]},
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.',
+								:time => '18:00'} ]},
 					{:title => 'Day 2',
 					:tours => [{:img => 'img/map.png',
 								:point_on_the_map => nil,
-								:description => nil },
+								:description => nil,
+								:time => nil },
 								{:img => 'img/trip-img2.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								:description => 'Lorem ipsum dolor sit amet, consectetur',
+								:time => '10:00'},
 								{:img => 'img/trip-img1.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit',
+								:time => '15:00'},
 								{:img => 'img/trip-img3.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]},
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.',
+								:time => '18:00'} ]},
 					{:title => 'Day 3',
 					:tours => [{:img => 'img/map.png',
 								:point_on_the_map => nil,
-								:description => nil },
+								:description => nil,
+								:time => nil },
 								{:img => 'img/trip-img2.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Lorem ipsum dolor sit amet, consectetur'},
+								:description => 'Lorem ipsum dolor sit amet, consectetur',
+								:time => '10:00'},
 								{:img => 'img/trip-img1.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit'},
+								:description => 'Duis vulputate commodo lectus, ac blandit elit tincidunt id. Sed rhoncus, tortor sed eleifend tristique, tortor mauris molestie elit',
+								:time => '15:00'},
 								{:img => 'img/trip-img3.png',
 								:point_on_the_map => 'javascript:void(0)',
-								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.'} ]} ]
+								:description => 'Quisque nec mauris sit amet elit iaculis pretium sit amet quis magna.',
+								:time => '18:00'} ]} ]
 !!! 5
 %html(lang='en')
 	%head
@@ -58,6 +69,7 @@
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/main.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "css/font-awesome.min.css"}
 		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Open+Sans:300,400,700"}
+		%link{:rel => "stylesheet", :type => "text/css", :href => "https://fonts.googleapis.com/css?family=Indie+Flower"}
 		%script{:type => "text/javascript", :src => "js/jquery-3.1.1.min.js"}
 		%script{:type => "text/javascript", :src => "js/interface.js"}
 	%body
@@ -101,6 +113,9 @@
 								.expert-characters-text
 									%p.title-sub  Local Expert
 									%p Audrey Tautou
+									.star-block
+										-(1..5).each do |index|
+											%i.fa.fa-star{:class => "#{index <= @rating ? 'star-active' : ''}"}
 							.degrees-block
 								-@degree_items.each do |item|
 									.degree-item
@@ -131,6 +146,8 @@
 										- item[:tours].each_with_index do |tour, index|
 											- if index % 2 == 0
 												.img-block-time	
+													-if tour[:time]
+														.block-time= tour[:time]
 													.img-block
 														.clearfix
 															%img{:src => "#{tour[:img]}"}
@@ -145,6 +162,8 @@
 										- item[:tours].each_with_index do |tour, index|
 											- unless index % 2 == 0
 												.img-block-time
+													-if tour[:time]
+														.block-time= tour[:time]
 													.img-block
 														.clearfix
 															%img{:src => "#{tour[:img]}"}

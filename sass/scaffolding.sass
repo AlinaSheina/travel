@@ -43,7 +43,62 @@ header
 			&:hover
 				background: $header-menu-active-bg
 main
-	padding-bottom: 80px
+	position: relative
+	.content
+		padding-bottom: 80px	
+.sidebar
+	width: 560px
+	background: $sidebar-bg	
+	box-sizing: border-box
+	position: absolute
+	top: 0
+	height: calc(100vh - 60px)
+	transition: .3s ease-in-out
+	&.sidebar-hide
+		transform: translateX(-100%)
+		border-right: 4px solid $sidebar-arrow-bg
+		margin-left: 3px
+		.sidebar-arrow
+			right: -20px
+			height: 30px
+			width: 20px
+			font-size: $font-size-20
+	.sidebar-padding
+		padding: 40px 50px 40px 40px
+	.sidebar-arrow
+		position: absolute
+		top: 40px
+		right: -36px
+		height: 40px
+		width: 36px
+		border-radius: 0 9px 9px 0
+		background: $sidebar-arrow-bg
+		box-shadow: $sidebar-arrow-shadow
+		font-size: 2em
+		text-decoration: none
+		@include centering-item
+	.info-block
+		background: $info-block-bg
+		box-shadow: $info-block-shadow
+		border-radius: $border-radius-big
+		border: $info-block-border
+		.info-block-header 
+			padding: 18px 18px 24px 10px
+			display: flex
+			.info-header-icon
+				margin-right: 8px
+			.info-header-text
+				flex: 1
+				p
+					font-size: $font-size-20
+					letter-spacing: $letter-spacing03
+					padding-bottom: 4px
+		.info-block-img
+			width: 100%
+		.info-block-description
+			padding: 16px 16px
+			line-height: 1.2
+			letter-spacing: -0.015em
 footer
 	min-height: 100px
 	background: $footer-bg
